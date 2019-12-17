@@ -1,0 +1,50 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-preped">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-user-circle"></i>
+        </div>
+      </div>
+      <input class="form-control" name="CardOwnerName" #CardOwnerName="ngModel" [(ngModel)]="service.CardOwnerName"
+        placeholder="Card Owner Name" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-preped">
+        <div class="input-group-text bg-white">
+          <i class="far fa-credit-card"></i>
+        </div>
+      </div>
+      <input class="form-control" name="CardNumber" #CardNumber="ngModel" [(ngModel)]="service.CardNumber"
+        placeholder="Card Owner Number" required maxlength="16">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-7">
+      <div class="input-group">
+        <div class="input-group-preped">
+          <div class="input-group-text bg-white">
+            <i class="far fa-calendar-alt"></i>
+          </div>
+        </div>
+        <input class="form-control" name="ExpirationDate" #ExpirationDate="ngModel" [(ngModel)]="service.ExpirationDate"
+          placeholder="MM/YY" required maxlength="5">
+      </div>
+    </div>
+    <div class="form-group col-md-5">
+      <div class="input-group">
+        <div class="input-group-preped">
+          <div class="input-group-text bg-white">
+            <i class="fas fa-key"></i>
+          </div>
+        </div>
+        <input type="password" class="form-control" name="CVV" #CVV="ngModel" [(ngModel)]="service.CVV" placeholder="CVV" required maxlength="3">
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-success btn-lg btn-block"><i class="fas fa-database"></i> Submit </button>
+  </div>
+</form>
